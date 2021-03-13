@@ -16,7 +16,7 @@ class Solution:
 
             val = p1.val + p2.val + rem
             current_node_val = val % 10
-            rem = current_node_val / 10
+            rem = int(val / 10)
             node.val = current_node_val
 
             p_res.next = node
@@ -24,12 +24,33 @@ class Solution:
             p1 = p1.next
             p2 = p2.next
 
-        
+        while p1:
+            val = p1.val + rem
+            current_node_val = val % 10
+            rem = int(val / 10)
+            p_res.next = ListNode(current_node_val)
+            p_res = p_res.next
+            p1 = p1.next
+            
+        while p2:
+            val = p2.val + rem
+            current_node_val = val % 10
+            rem = int(val / 10)
+            p_res.next = ListNode(current_node_val)
+            p_res = p_res.next
+            p2 = p2.next
+
+        if rem > 0:
+            p_res.next = ListNode(rem)
+            p_res = p_res.next
+
+        res = res.next
 
         return res
 
 if __name__ == "__main__":
     sol = Solution()
-    list1 = ListNode()
-
+    list1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
+    list2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
+    res = sol.addTwoNumbers(list1, list2)
     print('test')
