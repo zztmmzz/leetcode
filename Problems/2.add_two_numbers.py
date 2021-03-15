@@ -31,7 +31,7 @@ class Solution:
             p_res.next = ListNode(current_node_val)
             p_res = p_res.next
             p1 = p1.next
-            
+
         while p2:
             val = p2.val + rem
             current_node_val = val % 10
@@ -47,10 +47,3 @@ class Solution:
         res = res.next
 
         return res
-
-if __name__ == "__main__":
-    sol = Solution()
-    list1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
-    list2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
-    res = sol.addTwoNumbers(list1, list2)
-    print('test')

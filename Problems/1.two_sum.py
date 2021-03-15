@@ -13,11 +13,11 @@ class Solution:
             cache[diff] = i
         return []
 
-sol = Solution()
-nums = ast.literal_eval(input())
+# sol = Solution()
+# nums = ast.literal_eval(input())
 
-target = int(input())
+# target = int(input())
 
-res = ','.join(map(str, sol.twoSum(nums, target)))
+# res = ','.join(map(str, sol.twoSum(nums, target)))
 
-print('[%s]' % res)
+# print('[%s]' % res)
